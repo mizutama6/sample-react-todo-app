@@ -19,15 +19,15 @@ const App = () => {
     <>
       <h1>TODOアプリ</h1>
       <ul>
-          {
-            todos.map((todo, i) => (
-              <li key={i}>
-                <input type="button" value="x" />{todo.title}
-              </li>
-            ))
-          }
-          <input type="text" id="todo" />
-          <input type="button" value="追加" onClick={() => addTodo(document.getElementById('todo').value)} />
+        {
+          todos.map((todo, i) => (
+            <li key={i}>
+              <input type="button" value="x" />{todo.title}
+            </li>
+          ))
+        }
+        <input type="text" id="todo" />
+        <input type="button" value="追加" onClick={() => addTodo(document.getElementById('todo').value)} />
       </ul>
     </>
   )
