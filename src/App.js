@@ -19,7 +19,6 @@ const App = () => {
     <>
       <h1>TODOアプリ</h1>
       <ul>
-        <li>
           {
             todos.map((todo, i) => (
               <li key={i}>
@@ -29,7 +28,6 @@ const App = () => {
           }
           <input type="text" id="todo" />
           <input type="button" value="追加" onClick={() => addTodo(document.getElementById('todo').value)} />
-        </li>
       </ul>
     </>
   )
