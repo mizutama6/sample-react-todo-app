@@ -1,12 +1,7 @@
 import React, { useState } from 'react'
 
 const App = () => {
-  const [todos, setTodos] = useState([
-    { title: 'JavaScriptを覚える' },
-    { title: 'Reactを覚える' },
-    { title: '英単語を覚える' },
-    { title: '掃除をする' },
-  ])
+  const [todos, setTodos] = useState([])
 
   const addTodo = (todo) => {
     setTodos([
