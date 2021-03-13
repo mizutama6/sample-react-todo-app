@@ -7,6 +7,14 @@ const App = () => {
     { title: '英単語を覚える' },
     { title: '掃除をする' },
   ])
+
+  const addTodo = (todo) => {
+    setTodos([
+      ...todos,
+      { title: todo }
+    ])
+  }
+
   return (
     <>
       <h1>TODOアプリ</h1>
@@ -19,6 +27,8 @@ const App = () => {
               </li>
             ))
           }
+          <input type="text" id="todo" />
+          <input type="button" value="追加" onClick={() => addTodo(document.getElementById('todo').value)} />
         </li>
       </ul>
     </>
