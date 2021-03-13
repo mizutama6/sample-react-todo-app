@@ -15,6 +15,11 @@ const App = () => {
     ])
   }
 
+  const removeTodo = (i) => {
+    todos.splice(i, 1)
+    setTodos([...todos])
+  }
+
   return (
     <>
       <h1>TODOアプリ</h1>
@@ -22,7 +27,7 @@ const App = () => {
         {
           todos.map((todo, i) => (
             <li key={i}>
-              <input type="button" value="x" />{todo.title}
+              <input type="button" value="x" onClick={() => removeTodo(i)} />{todo.title}
             </li>
           ))
         }
