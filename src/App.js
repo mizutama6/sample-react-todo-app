@@ -8,6 +8,7 @@ const App = () => {
       ...todos,
       { title: todo }
     ])
+    document.getElementById('todo').value = ''
   }
 
   const removeTodo = (i) => {
