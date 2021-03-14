@@ -17,7 +17,7 @@ const App = () => {
   }
 
   return (
-    <>
+    <div className="">
       <h1>TODOアプリ</h1>
       <input type="text" id="todo" />
       <input type="button" value="追加" onClick={() => addTodo(document.getElementById('todo').value)} />
@@ -30,7 +30,7 @@ const App = () => {
           ))
         }
       </ul>
-    </>
+    </div>
   )
 }
 
