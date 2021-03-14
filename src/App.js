@@ -4,6 +4,10 @@ const App = () => {
   const [todos, setTodos] = useState([])
 
   const addTodo = (todo) => {
+    if (todo === '') {
+      alert('入力してください')
+      return
+    }
     setTodos([
       ...todos,
       { title: todo }
