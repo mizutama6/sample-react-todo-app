@@ -3,16 +3,18 @@ import React, { useState } from 'react'
 const App = () => {
   const [todos, setTodos] = useState([])
 
-  const addTodo = (todo) => {
-    if (todo === '') {
+  const [todoTitle, setTodoTitle] = useState('')
+  
+  const addTodo = () => {
+    if (todoTitle === '') {
       alert('入力してください')
       return
     }
     setTodos([
       ...todos,
-      { title: todo }
+      { title: todoTitle }
     ])
-    document.getElementById('todo').value = ''
+    setTodoTitle('')
   }
 
   const removeTodo = (i) => {
@@ -25,13 +27,14 @@ const App = () => {
       <h1 className="text-xl mb-5">TODOアプリ</h1>
       <input
         type="text"
-        id="todo"
+        value={todoTitle}
+        onChange={event => setTodoTitle(event.target.value)}
         className="border rounded outline-none px-2 py-1"
       />
       <input
         type="button"
         value="追加"
-        onClick={() => addTodo(document.getElementById('todo').value)}
+        onClick={addTodo}
         className="px-2 py-1 rounded ml-2 mb-10 primary outline-none border border-blue-400 text-blue-400 bg-white hover:bg-blue-400 hover:text-white"
       />
       <ul>
